@@ -1,5 +1,15 @@
 {
-  "dependencies": {
-    "nodemon": "^3.1.9"
-  }
+    "name": "sample",
+    "version": "1.0.0",
+    "main": "app.js",
+    "scripts": {
+        "start": "nodemon"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "nodemon": "^3.1.9"
+    }
 }

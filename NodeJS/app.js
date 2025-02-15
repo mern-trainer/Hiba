@@ -1,86 +1,36 @@
-// JS => Front End
-// NodeJS => Back End => JavaScript Runtime Environment. Google Chrome V8 Engine
+// Server nodejs
 
-// const sum = (a, b) => {
-//     return a + b;
-// }
+// core modules / build-in modules
 
-// console.log(sum(1, 2));
+// http
 
-// Package => NodeJS
+const http = require("http")
 
-// ES5, ES6
+const server = http.createServer()
 
-// import, export
-// require(), module.exports
+server.on("request", (request, response) => {
+    const path = request.url
 
-// Built-in or Core Module, Third-party Module
-
-// fs, http, os, path, url, dns -> Built-in Modules
-// nodemon, bcrypt, jsonwebtoken -> Third-party Modules
-
-const os = require("os") // ES5
-// import os from "os" // ES6
-
-// console.log(os.platform());
-// console.log(os.version());
-// console.log(os.homedir());
-// console.log(os.tmpdir());
-// console.log(os.hostname());
-// console.log(os.uptime());
-// console.log(os.cpus());
-// console.log(os.networkInterfaces());
-
-
-const fs = require("fs") // file System - ES5
-// import fs from "fs" // ES6
-
-// fs.writeFile("index.txt", "Hello World", () => {
-//     console.log("File Created") 
-// })
-
-// fs.readFile("index.txt", "utf-8", (error, content) => {
-//     if (error) {
-//         return console.log(error.message);
-//     }
-//     return console.log("Content: ",content);
-// })
- 
-// fs.appendFile("index.txt", " Sample text", () => {
-//     console.log("File Updated")    
-// })
-
-// fs.unlink("index.txt", (error) => {
-//     if (error) {
-//         return console.log(error.message)
-//     }
-//     return console.log("File Deleted")
-// })
-
-fs.rename("index.txt", "renamedIndex.txt", () => {
-    // console.log("File Renamed");
+    if (path == "/") {
+        response.writeHead(200, { "content-type": "text/html" })
+        return response.end("Home Page")
+    }
+    
+    return response.end(path +" Not found")
 })
 
-// streams => chunks => readStream, writeStream
+// 200 => OK
+// 201 => Created
 
-const readStream = fs.createReadStream("sample.txt", { encoding: "utf-8" }) // Buffer
-const writeStream = fs.createWriteStream("result.txt", { encoding: "utf-8" })
-// data, end, error
+// 400 => Bad request
+// 401 => Unauthorized
+// 404 => Not found
+// 409 => Conflict
 
-// readStream.on("data", (chunk) => {
-//     writeStream.write(`CHUNK-START: ${chunk}`)
-// })
+// 500 => Internal server error
 
-readStream.pipe(writeStream)
-
-readStream.on("error", (error) => {
-    console.log(error.message);
+server.listen(8080, () => {
+    console.log("Server: http://localhost:8080");
 })
- 
-readStream.on("end", () => {
-    console.log("File Read Completed");
-})
-
- 
 
 
