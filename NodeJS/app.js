@@ -1,54 +1,30 @@
-// Server nodejs
+const { createServer } = require('http')
+const { parse } = require('url')
 
-// core modules / build-in modules
+const app = createServer()
 
-// http
+let todoList = []
 
-const http = require("http")
-const url = require("url")
-
-const server = http.createServer()
-
-server.on("request", (request, response) => {
-    
-    const path = request.url
+app.on("request", (request, response) => {
     const method = request.method
+    const url = request.url
+    const { pathname, query } = parse(url, true)
 
-    const parsedUrl = url.parse(path, true)
-
-    if (parsedUrl.pathname == "/") {
-        if (method != "GET") {
-            response.writeHead(405, { "content-type": "text/html" })
-            return response.end("Method not allowed")
-        }
-        response.writeHead(200, { "content-type": "text/html" })
-        return response.end("Home Page " + JSON.stringify(parsedUrl.query))
+    if (method === "GET" && pathname === "/") {
+        response.writeHead(200, { "Content-Type": "application/json" })
+        return response.end(JSON.stringify(todoList))
     }
-    
-    return response.end(path +" Not found")
+    if (method === "POST" && pathname === "/") {
+        const task = query.task
+        console.log(task);
+        if (!task) {
+            return response.end("Please provide a task")
+        }
+        todoList.unshift(task)
+        return response.end(JSON.stringify({ status: "success", task }))
+    }
 })
 
-// http methods
-// GET => read
-// POST => create
-// PUT => replace
-// PATCH => update    
-// DELETE => delete
-    
-
-// 200 => OK
-// 201 => Created
-
-// 400 => Bad request
-// 401 => Unauthorized
-// 404 => Not found
-// 405 => Method not allowed
-// 409 => Conflict
-
-// 500 => Internal server error
-
-server.listen(8080, () => {
-    console.log("Server: http://localhost:8080");
+app.listen(8080, () => {
+    console.log("Server running on port 8080")
 })
-
-
