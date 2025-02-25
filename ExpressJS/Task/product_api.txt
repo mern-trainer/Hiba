@@ -1,1 +1,13 @@
 Q. Create a product management API that allows users to create, read, update, delete, single product view and search product features for products.
+
+fields => 
+    1. id -> Number
+    2. title -> String
+    3. description -> String
+    4. price -> Number (floating)
+    5. image -> String
+    6. discountPercentage -> Number (floating)
+    7. rating -> Number (floating)
+    8. stock -> Number
+    9. category -> String
+    10. reviews -> Number
