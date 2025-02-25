@@ -1,0 +1,1 @@
+Q. Create a product management API that allows users to create, read, update, delete, single product view and search product features for products.
