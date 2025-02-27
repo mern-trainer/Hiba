@@ -43,7 +43,6 @@ const deleteTodo = (request, response) => {
 const updateTodo = (request, response) => {
     const { id } = request.params
     const { completed, title } = request.body
-    console.log(completed, title);
     if (!id) {
         return response.status(400).send({ message: "Please provide an id" })
     }
