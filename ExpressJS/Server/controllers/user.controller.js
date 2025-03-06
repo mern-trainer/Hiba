@@ -28,7 +28,7 @@ const signup = async (request, response) => {
         }
         userData.password = await bcrypt.hash(userData.password, 10)
         usersList.push(userData)
-        return response.status(200).send(userData)
+        return response.status(201).send(userData)
     } catch (error) {
         return response.status(500).send({
             message: error.message || "Some error occurred while creating the User."
@@ -38,10 +38,10 @@ const signup = async (request, response) => {
 
 const login = async (request, response) => {
     try {
-        const { email, password } = request.query
-        if (!email) {
+        const { username, password } = request.query
+        if (!username) {
             return response.status(400).send({
-                message: "Email is required"
+                message: "Username is required"
             })
         }
         if(!password) {
@@ -49,7 +49,7 @@ const login = async (request, response) => {
                 message: "Password is required"
             })
         }
-        const user = usersList.find(u => u.email == email)
+        const user = usersList.find(u => u.username == username)
         if (!user) {
             return response.status(404).send({
                 message: "User not found"
@@ -72,3 +72,18 @@ const login = async (request, response) => {
 module.exports = {
     signup, login
 }
+
+// mongodb -> MongoDB is an open-source document-oriented database that is designed to store a large scale of data and allows us to work with that data efficiently
+
+// features
+
+// 1. Schema-less Database
+// 2. Document Oriented
+// 3. Indexing
+// 4. Scalability
+// 5. Aggregation
+// 6. High Performance
+
+// Limited Document Size – Maximum 16MB per document
+// Nesting Limits – Supports up to 100 levels of nested documents
+// High Memory Usage – Requires additional storage
