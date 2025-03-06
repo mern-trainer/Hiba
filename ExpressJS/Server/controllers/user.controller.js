@@ -1,4 +1,15 @@
 const bcrypt = require("bcrypt")
+const jwt = require("jsonwebtoken")
+require("dotenv").config()
+
+// jwt -> json web token
+// authentication -> verifying the user
+// authorization -> accessing the resources
+
+// 3 parts of jwt
+    // 1. header -> algorithm, type, key, meta data
+    // 2. payload -> data of the user
+    // 3. signature -> verify the payload
 
 let usersList = []
 
@@ -61,8 +72,11 @@ const login = async (request, response) => {
                 message: "Invalid credentials"
             })
         }
-        return response.status(200).send(user)
+        user.password = undefined
+        const token = jwt.sign({ sub: user }, process.env.JWT_KEY, { expiresIn: "3d"})
+        return response.status(200).send(token)
     } catch (error) {
+        console.log(error);
         return response.status(500).send({
             message: error.message || "Some error occurred while creating the User."
         })   
