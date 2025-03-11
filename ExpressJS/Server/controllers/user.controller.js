@@ -83,8 +83,12 @@ const login = async (request, response) => {
     }
 }
 
+const access = async (request, response) => {
+    return response.status(200).send("Access granted")
+}
+
 module.exports = {
-    signup, login
+    signup, login, access
 }
 
 // mongodb -> MongoDB is an open-source document-oriented database that is designed to store a large scale of data and allows us to work with that data efficiently

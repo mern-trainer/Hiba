@@ -13,7 +13,7 @@ app.use("/todo", todoRouter)
 app.use("/users", userRoute)
 
 app.listen(8081, () => {
-    console.log("Server running on port 8080")
+    console.log("Server running on port 8081")
 })
 
 

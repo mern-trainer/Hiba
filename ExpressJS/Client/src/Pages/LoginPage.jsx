@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { api } from "../axios"
 import { toast } from "react-toastify"
+import { jwtDecode } from "jwt-decode"
 
 const LoginPage = () => {
 
@@ -21,10 +22,12 @@ const LoginPage = () => {
             const { data, status } = await api.get("/users/login", {
                 params: formData
             })
-            console.log(data);
             if (status != 200) {
                 return toast.error(data.message)
             }
+            const res = jwtDecode(data)
+            console.log(res);
+            document.cookie = `SAMPLE-KEY=${data}; expires=${new Date(res.exp * 1000).toUTCString()};`
             return toast.success("User Logged in successfully")
         } catch (err) {
             console.log(err);
