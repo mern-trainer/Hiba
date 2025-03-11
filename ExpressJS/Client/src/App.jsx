@@ -3,6 +3,7 @@ import TodoPage from "./Pages/TodoPage"
 import TodoEditPage from "./Pages/TodoEditPage"
 import SignupPage from "./Pages/SignupPage"
 import LoginPage from "./Pages/LoginPage"
+import Access from "./Pages/Access"
 
 const App = () => {
     return <BrowserRouter>
@@ -12,6 +13,7 @@ const App = () => {
                 <Route path="edit/:id" Component={TodoEditPage} />
                 <Route path="signup" Component={SignupPage} />
                 <Route path="login" Component={LoginPage} />
+                <Route path="access" Component={Access} />
             </Route>
         </Routes>
     </BrowserRouter>

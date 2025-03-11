@@ -2,6 +2,7 @@ import { useState } from "react"
 import { api } from "../axios"
 import { toast } from "react-toastify"
 import { jwtDecode } from "jwt-decode"
+import { Link } from "react-router"
 
 const LoginPage = () => {
 
@@ -40,6 +41,7 @@ const LoginPage = () => {
             <input onChange={handleChange} value={formData.username} type="text" placeholder="Username" name="username"/>
             <input onChange={handleChange} value={formData.password} type="password" placeholder="Password" name="password"/>
             <button type="submit">Login</button>
+            <Link to={"/signup"}>Signup</Link>
         </form>
     </div>
 }

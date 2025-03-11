@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { api } from "../axios"
 import { toast } from "react-toastify"
+import { Link } from "react-router"
 
 const SignupPage = () => {
 
@@ -34,6 +35,7 @@ const SignupPage = () => {
             <input onChange={handleChange} value={formData.username} type="text" placeholder="Username" name="username"/>
             <input onChange={handleChange} value={formData.password} type="password" placeholder="Password" name="password"/>
             <button type="submit">Signup</button>
+            <Link to={"/login"}>Login</Link>
         </form>
     </div>
 }

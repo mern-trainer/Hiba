@@ -84,7 +84,7 @@ const login = async (request, response) => {
 }
 
 const access = async (request, response) => {
-    return response.status(200).send("Access granted")
+    return response.status(200).send({ message: "Access granted" })
 }
 
 module.exports = {
