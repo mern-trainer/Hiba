@@ -1,0 +1,3 @@
+Restaurant Management:
+    -Add, update, delete restaurant details (name, location, contact, rating).
+    -View restaurant list. (add book now button)
