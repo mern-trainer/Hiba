@@ -1,0 +1,49 @@
+SQL Database -> MySQL, Postgresql, Oracle, Microsoft SQL Server
+
+Mongodb ->  NoSQL Database
+        -   Non-relational database
+        -   Document based database
+        -   Schemaless database
+        -   JSON Like structure - BSON
+        -   Large volumes of data
+Features -> 
+    -NoSQL is a non-relational database management system which uses a document data model to store data. It is a flexible database that can be used for a wide range of applications.
+    -It is a distributed database that can be used to store data across multiple servers.
+    -It is a schemaless database that can be used to store data in any format.
+    -It is a flexible database that can be used to store data in any format.
+
+- SQL -> Structured Query Language
+    -   Table based database
+    - Table
+    - Record
+- NoSQL -> Non-Structured Query Language
+    -    Document based database
+    - Collections
+    - Document
+    - Key-Value Pair
+
+
+users data
+
+[
+  { id: 1, name: "Alice Johnson", email: "alice.johnson@example.com", age: 28, city: "New York", salary: 75000, job: "Software Engineer" },
+  { id: 2, name: "Bob Smith", email: "bob.smith@example.com", age: 34, city: "Los Angeles", salary: 90000, job: "Product Manager" },
+  { id: 3, name: "Charlie Brown", email: "charlie.brown@example.com", age: 22, city: "Chicago", salary: 55000, job: "Data Analyst" },
+  { id: 4, name: "David Wilson", email: "david.wilson@example.com", age: 40, city: "Miami", salary: 105000, job: "Marketing Director" },
+  { id: 5, name: "Eva Davis", email: "eva.davis@example.com", age: 31, city: "Dallas", salary: 78000, job: "UX Designer" },
+  { id: 6, name: "Fiona Clark", email: "fiona.clark@example.com", age: 25, city: "San Francisco", salary: 85000, job: "Web Developer" },
+  { id: 7, name: "George Miller", email: "george.miller@example.com", age: 29, city: "Seattle", salary: 95000, job: "Operations Manager" },
+  { id: 8, name: "Hannah Martinez", email: "hannah.martinez@example.com", age: 36, city: "Austin", salary: 110000, job: "Sales Manager" },
+  { id: 9, name: "Isaac Taylor", email: "isaac.taylor@example.com", age: 27, city: "Boston", salary: 67000, job: "Graphic Designer" },
+  { id: 10, name: "Jack Wilson", email: "jack.wilson@example.com", age: 30, city: "Denver", salary: 80000, job: "HR Specialist" },
+  { id: 11, name: "Kara Scott", email: "kara.scott@example.com", age: 24, city: "Portland", salary: 55000, job: "Customer Support" },
+  { id: 12, name: "Liam Harris", email: "liam.harris@example.com", age: 32, city: "Phoenix", salary: 93000, job: "Network Engineer" },
+  { id: 13, name: "Megan Lewis", email: "megan.lewis@example.com", age: 26, city: "Detroit", salary: 72000, job: "Business Analyst" },
+  { id: 14, name: "Nathan Walker", email: "nathan.walker@example.com", age: 38, city: "Chicago", salary: 100000, job: "Finance Manager" },
+  { id: 15, name: "Olivia Allen", email: "olivia.allen@example.com", age: 33, city: "San Diego", salary: 88000, job: "Project Manager" },
+  { id: 16, name: "Paul Young", email: "paul.young@example.com", age: 41, city: "Houston", salary: 120000, job: "Engineering Manager" },
+  { id: 17, name: "Quinn Adams", email: "quinn.adams@example.com", age: 27, city: "Las Vegas", salary: 65000, job: "Accountant" },
+  { id: 18, name: "Riley Baker", email: "riley.baker@example.com", age: 29, city: "New York", salary: 80000, job: "Content Writer" },
+  { id: 19, name: "Sophia Gonzalez", email: "sophia.gonzalez@example.com", age: 35, city: "Austin", salary: 95000, job: "Product Designer" },
+  { id: 20, name: "Tom Reed", email: "tom.reed@example.com", age: 28, city: "San Francisco", salary: 70000, job: "SEO Specialist" }
+]
